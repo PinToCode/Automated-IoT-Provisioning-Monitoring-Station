@@ -58,14 +58,9 @@ Firmware flashing uses a **single merged binary file** instead of multiple separ
 
 For stable operation:
 
-- ESP32 devices are connected through a **powered USB hub**
-- An **external 5V power supply** powers the ESP32 boards via `VIN` and `GND`
-- A **common ground** is maintained between:
-  - Raspberry Pi  
-  - ESP32 devices  
-  - External power supply  
-
-This setup prevents **serial noise**, **brownouts**, and flashing failures.
+- All ESP32 devices are connected to the Raspberry Pi through a **powered USB hub**
+- Power and data are supplied entirely over USB, which inherently provides a common ground between the Raspberry Pi and all connected ESP32 boards.
+- This setup ensures reliable serial communication and prevents flashing failures caused by power instability or noise.
 
 ---
 
