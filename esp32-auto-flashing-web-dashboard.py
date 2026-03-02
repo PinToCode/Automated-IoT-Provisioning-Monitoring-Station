@@ -10,16 +10,16 @@ app = Flask(__name__)
 socketio = SocketIO(app, cors_allowed_origins="*")
 
 # --- 2. CONFIGURATION & DEVICE MAPPING ---
-FIRMWARE_A = "/home/thingsboardclass/ESP_CODE/vibration_sound.ino.merged.bin"
-FIRMWARE_B = "/home/thingsboardclass/ESP_CODE/contactless_haii.ino.merged.bin"
-FIRMWARE_C = "/home/thingsboardclass/ESP_CODE/local_hello.ino.merged.bin"
-FIRMWARE_D = "/home/thingsboardclass/ESP_CODE/obstacle_no_sound.ino.merged.bin"
+FIRMWARE_A = "firmware/esp32_firmware1.merged.bin"
+FIRMWARE_B = "firmware/esp32_firmware2.merged.bin"
+FIRMWARE_C = "firmware/esp32_firmware3.merged.bin"
+FIRMWARE_D = "firmware/esp32_firmware4.merged.bin"
 
 DEVICE_ASSIGNMENTS = {
-    "c0:cd:d6:cf:37:74": FIRMWARE_A,
-    "c0:cd:d6:ce:0a:60": FIRMWARE_B,
-    "fc:f5:c4:65:d2:f8": FIRMWARE_C,
-    "14:33:5c:09:e1:28": FIRMWARE_D
+    "mac_address1": FIRMWARE_A,
+    "mac_address2": FIRMWARE_B,
+    "mac_address3": FIRMWARE_C,
+    "mac_address4": FIRMWARE_D
     # Add your remaining 4 MACs here...
 }
 
@@ -158,3 +158,4 @@ if __name__ == '__main__':
     # Start the web server on Port 5000
     # Accessible via http://your-pi-ip:5000
     socketio.run(app, host='0.0.0.0', port=5000, allow_unsafe_werkzeug=True)
+
